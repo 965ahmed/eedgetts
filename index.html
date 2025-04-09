@@ -16,25 +16,32 @@
     <rowspace>
 		<button class="settingsbutton" id="settingsbutton">⚙</button>
 		<select class="voices" id="voices" name="voices">
-			<option value="ru-RU, DmitryNeural">ru-RU, DmitryNeural</option>
+			<optgroup label="Multilingual">
 			<option value="en-US, AndrewMultilingualNeural">en-US, AndrewMultilingualNeural</option>
-			<option value="en-US, AndrewNeural">en-US, AndrewNeural</option>
-			<option value="en-US, AvaMultilingualNeural">en-US, AvaMultilingualNeural</option>
-			<option value="en-US, AvaNeural">en-US, AvaNeural</option>
-			<option value="en-US, BrianMultilingualNeural">en-US, BrianMultilingualNeural</option>
-			<option value="en-US, BrianNeural">en-US, BrianNeural</option>
-			<option value="en-US, EmmaMultilingualNeural">en-US, EmmaMultilingualNeural</option>
-			<option value="en-US, EmmaNeural">en-US, EmmaNeural</option>
-			<option value="zu-ZA, ThembaNeural">zu-ZA, ThembaNeural</option>
-		</select>
+				<option value="de-DE, FlorianMultilingualNeural">de-DE, FlorianMultilingualNeural</option>
+				<option value="de-DE, SeraphinaMultilingualNeural">de-DE, SeraphinaMultilingualNeural</option>
+					<option value="en-US, AvaMultilingualNeural">en-US, AvaMultilingualNeural</option>
+				<option value="en-US, BrianMultilingualNeural">en-US, BrianMultilingualNeural</option>
+				<option value="en-US, EmmaMultilingualNeural">en-US, EmmaMultilingualNeural</option>
+				<option value="fr-FR, RemyMultilingualNeural">fr-FR, RemyMultilingualNeural</option>
+				<option value="fr-FR, VivienneMultilingualNeural">fr-FR, VivienneMultilingualNeural</option>
+				<option value="it-IT, GiuseppeMultilingualNeural">it-IT, GiuseppeMultilingualNeural</option>
+				<option value="ko-KR, HyunsuMultilingualNeural">ko-KR, HyunsuMultilingualNeural</option>
+				<option value="pt-BR, ThalitaMultilingualNeural">pt-BR, ThalitaMultilingualNeural</option>
+			</optgroup>
+			<optgroup label="English">
+				<option value="en-AU, NatashaNeural">en-AU, NatashaNeural</option>
+				
+			</optgroup>
+			</select>
     </rowspace>
     <rowspace>
 		<select class="pointsselect" id="pointsselect" name="pointsselect">
-			<option>Do not replace dots</option>
-			<option>Replace dots with ,</option>
-			<option>Replace dots with ;</option>
-			<option>Replace dots with :</option>
-			<option>Replace dots with -</option>
+			<option>Don't replace periods</option>
+			<option>Replace periods with ,</option>
+			<option>Replace periods with ;</option>
+			<option>Replace periods with :</option>
+			<option>Replace periods with -</option>
 			<option>Replace with three lines</option>
 		</select>
 		<button class="pointstype" id="pointstype" onclick="points_mod()">V1</button>
@@ -43,7 +50,7 @@
     <div id="div-rate" class="slidecontainer">
 	  <br>
       <label for="rate">Speed <output style="float: right;" id="rate-str">+100%</output></label>
-      <input type="range" min="-50" max="100" value="100" step="5" class="rate" id="rate" list="ratemarks">
+      <input type="range" min="-50" max="100" value="25" step="5" class="rate" id="rate" list="ratemarks">
     </div>
     <div id="div-pitch" class="slidecontainer">
 	  <br>
@@ -52,12 +59,12 @@
     </div>
     <div id="div-threads" class="slidecontainer">
 	  <br>
-      <label for="max-threads">Number of Threads <output style="float: right;" id="max-threads-int">20</output></label>
+      <label for="max-threads">Number of threads <output style="float: right;" id="max-threads-int">20</output></label>
       <input type="range" min=1 max=30 value=20 step=1 class="max-threads" id="max-threads">
     </div>
     <div id="div-mergefiles" class="slidecontainer">
 	  <br>
-      <label for="mergefiles">Merge MP3 every <output style="float: right;" id="mergefiles-str">10 files</output></label>
+      <label for="max-threads">Merge MP3s by <output style="float: right;" id="mergefiles-str">10 pcs.</output></label>
       <input type="range" min=1 max=100 value=10 step=1 class="mergefiles" id="mergefiles">
     </div>
 	<label id="dop-settings-label">﹀</label>
@@ -70,12 +77,20 @@
 	</myspace>
     <input type="file" id="file-input-lex" accept=".lexx">
     <input type="file" id="file-input" accept=".txt, .fb2, .epub, .ini, .zip" multiple>
-	<button class="save" id="savebutton">Save as MP3</button>
+	<button class="save" id="savebutton">Save to MP3</button>
 	<br>
 	<textarea readonly class="text" id="stat-area"></textarea>
 	<br>
     <label id="stat-label"><output id="stat-info"></output> <output style="float: right;" id="stat-str">0 / 0</output></label>
   </section>
+
+  <section class="help-section">
+    <div id="help-content" class="help-content">
+      <h3 id="help-title"></h3>
+      <p id="help-text"></p>
+    </div>
+  </section>
+
   <script src="./assets/jszip.min.js"></script>
   <script src="./assets/texts_converter.js"></script>
   <script src="./assets/processing_file.js"></script>
@@ -83,4 +98,4 @@
   <script src="./assets/script.js"></script>
 </body>
 
-				</html>
+</html>
