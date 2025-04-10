@@ -1,4 +1,4 @@
-﻿const text = document.querySelector('.text')
+const text = document.querySelector('.text')
 const pitch = document.querySelector('.pitch')
 const pitch_str = document.querySelector('#pitch-str')
 const rate = document.querySelector('.rate')
@@ -41,11 +41,12 @@ function hideHelp() {
 document.getElementById('pointstype').addEventListener('click', () => {
     const mode = document.getElementById('pointstype').textContent;
     const helpTexts = {
-        'V1': 'Replaces all periods in the text with the selected character.',
-        'V2': 'Preserves periods at line endings, but replaces all other periods with the selected character.',
-        'V3': 'Preserves periods at line endings, and replaces only periods followed by spaces with the selected character plus a space.'
-    };
-    showHelp('Period Replacement Mode: ' + mode, helpTexts[mode]);
+    'V1': 'Replaces all periods in the text with the selected character.',
+    'V2': 'Preserves periods at line endings, but replaces all other periods with the selected character.',
+    'V3': 'Preserves periods at line endings, and replaces only periods followed by spaces with the selected character plus a space.',
+    'V4': 'Only replaces periods that are surrounded by spaces with the selected character.'
+};
+showHelp('Period Replacement Mode: ' + mode, helpTexts[mode]);
 });
 
 // Hide help when clicking outside
@@ -445,13 +446,15 @@ const start = () => {
 
 
 function points_mod() {
-	if (pointsType.innerHTML === "V1") {
-		pointsType.innerHTML = "V2";
-	} else if (pointsType.innerHTML === "V2") {
-		pointsType.innerHTML = "V3";
-	} else if (pointsType.innerHTML === "V3") {
-		pointsType.innerHTML = "V1";
-	}
+    if (pointsType.innerHTML === "V1") {
+        pointsType.innerHTML = "V2";
+    } else if (pointsType.innerHTML === "V2") {
+        pointsType.innerHTML = "V3";
+    } else if (pointsType.innerHTML === "V3") {
+        pointsType.innerHTML = "V4";
+    } else {
+        pointsType.innerHTML = "V1";
+    }
 }
 
 function save_settings() {
@@ -485,4 +488,4 @@ function load_settings() {
 	if (localStorage.getItem('statArea_style_display'     )) { statArea.style.display      = localStorage.getItem('statArea_style_display'     ) }
 	if (localStorage.getItem('dopSettings_textContent'    )) { dopSettings.textContent     = localStorage.getItem('dopSettings_textContent'    ) }
 	threads_info = { count: parseInt(max_threads.value), stat: stat_str }
-}
+				     }
