@@ -2,7 +2,7 @@
 
 A web-based interface for Microsoft Edge's Text-to-Speech service that allows you to convert text to speech using various neural voices.
 
-🔗 [Try it live](https://vadash.github.io/EdgeTTS/)
+🔗 [Try it live](https://965ahmed.github.io/eedgetts/)
 
 ## Features
 
