@@ -13,28 +13,29 @@
   <textarea class="text" id="text-area" placeholder="Text..."></textarea>
   <br>
   <section class="options">
-    <rowspace>
-        <button class="settingsbutton" id="settingsbutton">⚙</button>
-        <select class="voices" id="voices" name="voices">
-            <optgroup label="Multilingual">
-			<option value="en-US, AndrewMultilingualNeural">en-US, AndrewMultilingualNeural</option>
-				<option value="de-DE, FlorianMultilingualNeural">de-DE, FlorianMultilingualNeural</option>
-				<option value="de-DE, SeraphinaMultilingualNeural">de-DE, SeraphinaMultilingualNeural</option>
-					<option value="en-US, AvaMultilingualNeural">en-US, AvaMultilingualNeural</option>
-				<option value="en-US, BrianMultilingualNeural">en-US, BrianMultilingualNeural</option>
-				<option value="en-US, EmmaMultilingualNeural">en-US, EmmaMultilingualNeural</option>
-				<option value="fr-FR, RemyMultilingualNeural">fr-FR, RemyMultilingualNeural</option>
-				<option value="fr-FR, VivienneMultilingualNeural">fr-FR, VivienneMultilingualNeural</option>
-				<option value="it-IT, GiuseppeMultilingualNeural">it-IT, GiuseppeMultilingualNeural</option>
-				<option value="ko-KR, HyunsuMultilingualNeural">ko-KR, HyunsuMultilingualNeural</option>
-				<option value="pt-BR, ThalitaMultilingualNeural">pt-BR, ThalitaMultilingualNeural</option>
-			</optgroup>
-			<optgroup label="English">
-				<option value="en-AU, NatashaNeural">en-AU, NatashaNeural</option>
-				
-			</optgroup>
-			</select>rowspace>
-    <rowspace>
+    <div class="rowspace">
+      <button class="settingsbutton" id="settingsbutton">⚙</button>
+      <select class="voices" id="voices" name="voices">
+        <optgroup label="Multilingual">
+          <option value="en-US, AndrewMultilingualNeural">en-US, AndrewMultilingualNeural</option>
+          <option value="de-DE, FlorianMultilingualNeural">de-DE, FlorianMultilingualNeural</option>
+          <option value="de-DE, SeraphinaMultilingualNeural">de-DE, SeraphinaMultilingualNeural</option>
+          <option value="en-US, AvaMultilingualNeural">en-US, AvaMultilingualNeural</option>
+          <option value="en-US, BrianMultilingualNeural">en-US, BrianMultilingualNeural</option>
+          <option value="en-US, EmmaMultilingualNeural">en-US, EmmaMultilingualNeural</option>
+          <option value="fr-FR, RemyMultilingualNeural">fr-FR, RemyMultilingualNeural</option>
+          <option value="fr-FR, VivienneMultilingualNeural">fr-FR, VivienneMultilingualNeural</option>
+          <option value="it-IT, GiuseppeMultilingualNeural">it-IT, GiuseppeMultilingualNeural</option>
+          <option value="ko-KR, HyunsuMultilingualNeural">ko-KR, HyunsuMultilingualNeural</option>
+          <option value="pt-BR, ThalitaMultilingualNeural">pt-BR, ThalitaMultilingualNeural</option>
+        </optgroup>
+        <optgroup label="English">
+          <option value="en-AU, NatashaNeural">en-AU, NatashaNeural</option>
+        </optgroup>
+      </select>
+    </div>
+    
+    <div class="rowspace">
       <select class="pointsselect" id="pointsselect" name="pointsselect">
         <option>Don't replace periods</option>
         <option>Replace periods with ,</option>
@@ -44,43 +45,48 @@
         <option>Replace with three lines</option>
       </select>
       <button class="pointstype" id="pointstype" onclick="points_mod()">V1</button>
-      <!-- Points Type Dropdown -->
       <select id="pointsType">
         <option>V1</option>
         <option>V2</option>
         <option>V3</option>
         <option>V4</option>
       </select>
-    </rowspace>
+    </div>
 
     <div id="div-rate" class="slidecontainer">
-        <br>
-        <label for="rate">Speed <output style="float: right;" id="rate-str">+100%</output></label>
-        <input type="range" min="-50" max="100" value="25" step="5" class="rate" id="rate" list="ratemarks">
+      <br>
+      <label for="rate">Speed <output style="float: right;" id="rate-str">+100%</output></label>
+      <input type="range" min="-50" max="100" value="25" step="5" class="rate" id="rate" list="ratemarks">
     </div>
+
     <div id="div-pitch" class="slidecontainer">
-        <br>
-        <label for="pitch">Pitch <output style="float: right;" id="pitch-str">+0Hz</output></label>
-        <input type="range" min="-50" max="50" value="0" step="0" class="pitch" id="pitch">
+      <br>
+      <label for="pitch">Pitch <output style="float: right;" id="pitch-str">+0Hz</output></label>
+      <input type="range" min="-50" max="50" value="0" step="0" class="pitch" id="pitch">
     </div>
+
     <div id="div-threads" class="slidecontainer">
-        <br>
-        <label for="max-threads">Number of threads <output style="float: right;" id="max-threads-int">20</output></label>
-        <input type="range" min=1 max=30 value=20 step=1 class="max-threads" id="max-threads">
+      <br>
+      <label for="max-threads">Number of threads <output style="float: right;" id="max-threads-int">20</output></label>
+      <input type="range" min="1" max="30" value="20" step="1" class="max-threads" id="max-threads">
     </div>
+
     <div id="div-mergefiles" class="slidecontainer">
-        <br>
-        <label for="max-threads">Merge MP3s by <output style="float: right;" id="mergefiles-str">10 pcs.</output></label>
-        <input type="range" min=1 max=100 value=10 step=1 class="mergefiles" id="mergefiles">
+      <br>
+      <label for="max-threads">Merge MP3s by <output style="float: right;" id="mergefiles-str">10 pcs.</output></label>
+      <input type="range" min="1" max="100" value="10" step="1" class="mergefiles" id="mergefiles">
     </div>
+
     <label id="dop-settings-label">﹀</label>
     <br>
-    <myspace class="myspace">
-        <label id="left-label"><a href="./RU.lexx" id="is-lexx">Dictionary</a></label>
-        <label id="right-label">Books</label>
-        <button id="file-button-lex">Upload</button>
-        <button id="file-button">Open</button>
-    </myspace>
+
+    <div class="myspace">
+      <label id="left-label"><a href="./RU.lexx" id="is-lexx">Dictionary</a></label>
+      <label id="right-label">Books</label>
+      <button id="file-button-lex">Upload</button>
+      <button id="file-button">Open</button>
+    </div>
+
     <input type="file" id="file-input-lex" accept=".lexx">
     <input type="file" id="file-input" accept=".txt, .fb2, .epub, .ini, .zip, .srt" multiple>
     <button class="save" id="savebutton">Save to MP3</button>
@@ -104,4 +110,4 @@
   <script src="./assets/script.js"></script>
 </body>
 
-					</html>
+					      </html>
